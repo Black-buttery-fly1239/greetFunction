@@ -39,6 +39,18 @@ function Greeting() {
         return greeting;
     }
 
+    function error(language,name){
+        if (name === '' && !language) {
+             "please enter name and select language"
+        }
+        else if (name ==="") {
+         "Please enter name"
+        }
+        else if(!language){
+        "Please select language"
+        }
+    }
+
 
     function greetCounter() {
         return nameList.length;
@@ -51,5 +63,6 @@ function Greeting() {
         theName,
         greet,
         greetCounter,
+        error,
     }
 }

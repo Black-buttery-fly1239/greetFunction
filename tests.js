@@ -25,7 +25,13 @@ describe("The Greeting function", function() {
         assert.equal("Groet Makhosazane", greetingSetting.greet("Afrikaans", "Makhosazane")); 
         
         let greetSetting2 = Greeting();
-        assert.equal("Groet Zukiswa", greetingSetting.greet("Afrikaans","Zukiswa"))
+       it("should return please name", function(){
+        let greetingSetting = Greeting();
+
+        greetingSetting.setName([""]);
+        assert.equal("", greetingSetting.getName())
+});
+
     });
 
     it("should be able to take in the name and greet in Isixhosa", function(){
@@ -43,6 +49,34 @@ describe("The Greeting function", function() {
         greetingSetting.setName(["Nobuhle"])
         assert.equal(1,greetingSetting.greetCounter(["Nobuhle"]))
     }); 
+
+    it('should check if the name is already greated' , function(){
+        let greetingSetting = Greeting();
+
+        greetingSetting.setName(["buhle"])
+        greetingSetting.setName(["Buhle"])
+        assert.equal(1,greetingSetting.greetCounter())
+    }); 
+
+    it("should return please name", function(){
+        let greetingSetting = Greeting();
+
+        greetingSetting.setName([""]);
+        assert.equal("", greetingSetting.getName())
 });
 
+it("should return Please select the language", function(){
+    let greetingSetting = Greeting();
     
+    greetingSetting.setName([""]);
+    assert.equal("", greetingSetting.getName()); 
+});
+
+it("should return Please enter name and select the language", function(){
+    let greetingSetting = Greeting();
+    
+    greetingSetting.setName([""]);
+    assert.equal("", greetingSetting.getName()); 
+});
+
+});    
